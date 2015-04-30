@@ -1,0 +1,50 @@
+extends layout
+
+block content
+
+    div.panel.panel-info
+        div.panel-heading
+            | Status
+
+        table.table.table-bordered.panel-body
+            tr
+                th Connection Status
+                th Light Count
+                th Current Show
+                th Selected Group
+                
+            tr
+                td=connectionStatus
+                td=lightCount
+                td=currentShow
+                td=selectedGroup.name
+
+    div.panel.panel-primary
+        div.panel-heading
+            | Brightness
+
+        div.panel-body
+            form
+                div.form-group.row-fluid
+                    div.col-md-10
+                        input.form-control(type="number", value=255, id="brightness-value")
+                    div.col-md-2
+                        button.btn.btn-block.btn-primary(id="set-brightness") Set Brightness
+
+            br
+            br
+
+            div.row-fluid
+                div.col-md-3
+                    button.btn.btn-block.btn-primary.brightness-selector(brightness=0) Set 0
+
+                div.col-md-3
+                    button.btn.btn-block.btn-primary.brightness-selector(brightness=50) Set 50
+
+                div.col-md-3
+                    button.btn.btn-block.btn-primary.brightness-selector(brightness=150) Set 150
+
+                div.col-md-3
+                    button.btn.btn-block.btn-primary.brightness-selector(brightness=255) Set 255
+
+
